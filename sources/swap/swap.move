@@ -754,7 +754,7 @@ module warpgate::swap {
         debug::print(&amount_in);
         
         // Withdraw tokens from sender
-        let mm_fee_fa = primary_fungible_store::withdraw(sender, token_x, mm_fee_amount as u64);
+        let mm_fee_fa = primary_fungible_store::withdraw(sender, token_x, (mm_fee_amount as u64));
         let swap_fa = primary_fungible_store::withdraw(sender, token_x, amount_in);
         
         // Deposit fee to market maker fee recipient
@@ -766,7 +766,7 @@ module warpgate::swap {
             MarketMakerFeeEvent {
                 user: signer::address_of(sender),
                 token: fungible_asset::name(token_x),
-                fee_amount: mm_fee_amount as u64,
+                fee_amount: (mm_fee_amount as u64),
             }
         );
         
