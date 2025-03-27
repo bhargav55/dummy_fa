@@ -555,7 +555,7 @@ module warpgate::swap {
                 fee_amount: (fee_amount as u64),
                 reserve_x: reserve_x,
                 reserve_y: reserve_y,
-                lp_supply: total_supply as u64
+                lp_supply: (total_supply as u64)
             }
         );
         
