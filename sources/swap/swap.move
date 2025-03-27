@@ -525,8 +525,8 @@ module warpgate::swap {
             (metadata.token_store_x, metadata.token_store_y)
         };
         
-        let amount_x = ((fungible_asset::balance(store_x) as u128) * (liquidity as u128) / total_supply as u128) as u64;
-        let amount_y = ((fungible_asset::balance(store_y) as u128) * (liquidity as u128) / total_supply as u128) as u64;
+        let amount_x = (((fungible_asset::balance(store_x) as u128) * (liquidity as u128) / total_supply as u128) as u64);
+        let amount_y = (((fungible_asset::balance(store_y) as u128) * (liquidity as u128) / total_supply as u128) as u64);
         
         assert!(amount_x > 0 && amount_y > 0, ERROR_INSUFFICIENT_LIQUIDITY_BURNED);
         
